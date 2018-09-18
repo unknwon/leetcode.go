@@ -1,28 +1,11 @@
-package leetcode
-
-import (
-	"sort"
-)
-
-// https://leetcode.com/problems/two-sum/
-// O(n)
-func TwoSum(ints []int, sum int) [2]int {
-	idxs := make([]int, 2)
-	// key: value required
-	// val: index of another part
-	hash := map[int]int{}
-	for i := range ints {
-		hash[sum-ints[i]] = i + 1
-	}
-	for i := range ints {
-		idx, ok := hash[ints[i]]
-		if !ok {
-			continue
+func twoSum(nums []int, target int) []int {
+	m := make(map[int]int) // num -> index
+	for i := range nums {
+		left := target - nums[i]
+		if idx, ok := m[left]; ok {
+			return []int{i, idx}
 		}
-		idxs[0] = idx
-		idxs[1] = i + 1
-		sort.Ints(idxs)
-		break
+		m[nums[i]] = i
 	}
-	return [2]int{idxs[0], idxs[1]}
+	return []int{-1, -1}
 }
