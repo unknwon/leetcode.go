@@ -1,3 +1,10 @@
+package leetcode
+
+import (
+	"fmt"
+	"strconv"
+)
+
 func nextClosestTime(time string) string {
 	digitSet := map[int]bool{}
 	for i := range time {

@@ -1,3 +1,5 @@
+package leetcode
+
 func licenseKeyFormatting(S string, K int) string {
 	length := len(S)
 	bytes := make([]byte, 0, length)

@@ -1,3 +1,5 @@
+package leetcode
+
 func kEmptySlots(flowers []int, k int) int {
 	pots := make([]bool, len(flowers))
 

@@ -1,3 +1,5 @@
+package leetcode
+
 var (
 	g       [][]byte
 	height  int
